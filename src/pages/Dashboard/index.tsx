@@ -1,3 +1,4 @@
+import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
 import { ProductCard } from './components/ProductCard'
 import { DashboardContainer, DashboardContent } from './styles'
@@ -9,11 +10,13 @@ export function Dashboard() {
 
       <DashboardContainer>
         <DashboardContent>
-          {Array.from({ length: 10 }).map((_, i) => {
+          {Array.from({ length: 8 }).map((_, i) => {
             return <ProductCard key={i} />
           })}
         </DashboardContent>
       </DashboardContainer>
+
+      <Footer />
     </>
   )
 }
