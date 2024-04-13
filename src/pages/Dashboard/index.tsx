@@ -1,3 +1,4 @@
+import { CartSidebar } from '../../components/CartSidebar'
 import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
 import { ProductCard } from './components/ProductCard'
@@ -7,6 +8,7 @@ export function Dashboard() {
   return (
     <>
       <Header />
+      <CartSidebar />
 
       <DashboardContainer>
         <DashboardContent>

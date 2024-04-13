@@ -9,6 +9,8 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-color: ${(props) => props.theme['gray-100']};
     -webkit-font-smoothing: antialiased;
   }
