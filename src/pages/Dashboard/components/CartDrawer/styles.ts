@@ -1,7 +1,7 @@
 import { css, styled } from 'styled-components'
 
 interface CartSidebarProps {
-  isOpen: boolean
+  $isOpen: boolean
 }
 
 export const CartSidebarContainer = styled.aside<CartSidebarProps>`
@@ -23,7 +23,7 @@ export const CartSidebarContainer = styled.aside<CartSidebarProps>`
   ${(props) => css`
     background-color: ${props.theme.brand};
 
-    transform: translateX(${props.isOpen ? '0' : '100%'});
+    transform: translateX(${props.$isOpen ? '0' : '100%'});
   `}
 `
 

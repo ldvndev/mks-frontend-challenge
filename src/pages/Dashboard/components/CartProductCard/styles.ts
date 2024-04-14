@@ -71,12 +71,6 @@ export const QuantityContent = styled.div`
   color: ${(props) => props.theme.black};
 `
 
-export const QuantityLabel = styled.label`
-  font-weight: 400;
-  font-size: 3rem;
-  display: none;
-`
-
 export const QuantityButton = styled.button`
   height: 100%;
   width: 1.75rem;

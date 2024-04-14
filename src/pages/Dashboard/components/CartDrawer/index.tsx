@@ -18,7 +18,7 @@ export function CartDrawer() {
   const { isOpen, close } = useContext(CartDrawerContext)
 
   return (
-    <CartSidebarContainer isOpen={isOpen}>
+    <CartSidebarContainer $isOpen={isOpen}>
       <CardSidebarContent>
         <Header>
           <Title>

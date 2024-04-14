@@ -10,7 +10,6 @@ import {
   QuantityButton,
   QuantityContent,
   QuantityInput,
-  QuantityLabel,
   QuantityPriceContainer,
   Title,
 } from './styles'
@@ -27,13 +26,11 @@ export function CartProductCard() {
 
       <QuantityPriceContainer>
         <QuantityContent>
-          <QuantityLabel>Qtd:</QuantityLabel>
-
           <QuantityButton type="button" title="Diminuir quantidade">
             -
           </QuantityButton>
 
-          <QuantityInput value={1} />
+          <QuantityInput />
 
           <QuantityButton type="button" title="Aumentar quantidade">
             +

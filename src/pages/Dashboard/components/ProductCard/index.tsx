@@ -1,6 +1,6 @@
 import { ShoppingBag } from 'lucide-react'
 
-import productImage from '../../../../assets/product.svg'
+import { priceFormatter } from '../../../../utils/formatter'
 import {
   Header,
   PriceBadge,
@@ -12,22 +12,35 @@ import {
   ProductTitle,
 } from './styles'
 
-export function ProductCard() {
+interface ProductCardProps {
+  products: {
+    id: number
+    name: string
+    brand: string
+    description: string
+    photo: string
+    price: string
+    createdAt: string
+    updatedAt: string
+  }
+}
+
+export function ProductCard({ products }: ProductCardProps) {
   return (
     <ProductCardContainer>
-      <ProductImage src={productImage} />
+      <ProductImage src={products.photo} />
 
       <ProductCardContent>
         <Header>
-          <ProductTitle>Apple Watch Series 4 GPS</ProductTitle>
+          <ProductTitle>{products.name}</ProductTitle>
           <PriceBadge>
-            <ProductPrice>R$300</ProductPrice>
+            <ProductPrice>
+              {priceFormatter.format(+products.price).slice(0, -3)}
+            </ProductPrice>
           </PriceBadge>
         </Header>
 
-        <ProductDescription>
-          Redesigned from scratch and completely revised.
-        </ProductDescription>
+        <ProductDescription>{products.description}</ProductDescription>
       </ProductCardContent>
 
       <button title="Comprar produto">
