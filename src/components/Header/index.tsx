@@ -1,11 +1,11 @@
 import { useContext } from 'react'
 
 import cartImage from '../../assets/cart.svg'
-import { CartSidebarContext } from '../../contexts/CartSidebarContext'
+import { CartDrawerContext } from '../../contexts/CartDrawerContext'
 import { CartButton, HeaderContainer, LogoContainer } from './styles'
 
 export function Header() {
-  const { open } = useContext(CartSidebarContext)
+  const { open } = useContext(CartDrawerContext)
 
   return (
     <HeaderContainer>
@@ -14,7 +14,7 @@ export function Header() {
         <span>Sistemas</span>
       </LogoContainer>
 
-      <CartButton type="button" onClick={open} title="Open cart">
+      <CartButton type="button" onClick={open} title="Abrir carrinho">
         <img src={cartImage} alt="" />
         <span>0</span>
       </CartButton>

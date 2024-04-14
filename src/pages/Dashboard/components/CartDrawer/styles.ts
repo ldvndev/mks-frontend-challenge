@@ -65,6 +65,19 @@ export const CloseButton = styled.button`
   }
 `
 
+export const Product = styled.div`
+  overflow-y: auto;
+  max-height: 55vh;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  padding: 0.5rem 1.75rem;
+  margin-top: 3.4375rem;
+  margin-inline: 0.25rem;
+`
+
 export const Footer = styled.div`
   display: flex;
   align-items: center;

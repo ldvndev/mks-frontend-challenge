@@ -1,18 +1,18 @@
 import { createContext, ReactNode, useState } from 'react'
 
-interface CartSidebarContextType {
+interface CartDrawerContextType {
   isOpen: boolean
   open: () => void
   close: () => void
 }
 
-export const CartSidebarContext = createContext({} as CartSidebarContextType)
+export const CartDrawerContext = createContext({} as CartDrawerContextType)
 
 interface CartSidebarProviderProps {
   children: ReactNode
 }
 
-export function CartSidebarProvider({ children }: CartSidebarProviderProps) {
+export function CartDrawerProvider({ children }: CartSidebarProviderProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   function open() {
@@ -24,8 +24,8 @@ export function CartSidebarProvider({ children }: CartSidebarProviderProps) {
   }
 
   return (
-    <CartSidebarContext.Provider value={{ isOpen, open, close }}>
+    <CartDrawerContext.Provider value={{ isOpen, open, close }}>
       {children}
-    </CartSidebarContext.Provider>
+    </CartDrawerContext.Provider>
   )
 }

@@ -1,6 +1,6 @@
-import { CartSidebar } from '../../components/CartSidebar'
 import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
+import { CartDrawer } from './components/CartDrawer'
 import { ProductCard } from './components/ProductCard'
 import { DashboardContainer, DashboardContent } from './styles'
 
@@ -8,7 +8,7 @@ export function Dashboard() {
   return (
     <>
       <Header />
-      <CartSidebar />
+      <CartDrawer />
 
       <DashboardContainer>
         <DashboardContent>

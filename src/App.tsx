@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'styled-components'
 
-import { CartSidebarProvider } from './contexts/CartSidebarContext'
+import { CartDrawerProvider } from './contexts/CartDrawerContext'
 import { Dashboard } from './pages/Dashboard'
 import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
@@ -8,9 +8,10 @@ import { defaultTheme } from './styles/themes/default'
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <CartSidebarProvider>
+      <CartDrawerProvider>
         <Dashboard />
-      </CartSidebarProvider>
+      </CartDrawerProvider>
+
       <GlobalStyle />
     </ThemeProvider>
   )

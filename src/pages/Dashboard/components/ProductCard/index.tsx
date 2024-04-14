@@ -20,7 +20,6 @@ export function ProductCard() {
       <ProductCardContent>
         <Header>
           <ProductTitle>Apple Watch Series 4 GPS</ProductTitle>
-
           <PriceBadge>
             <ProductPrice>R$300</ProductPrice>
           </PriceBadge>
@@ -31,7 +30,7 @@ export function ProductCard() {
         </ProductDescription>
       </ProductCardContent>
 
-      <button>
+      <button title="Comprar produto">
         <ShoppingBag size={16} color="#F9F9F9" />
         <span>Comprar</span>
       </button>
