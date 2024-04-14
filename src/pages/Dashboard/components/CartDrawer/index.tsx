@@ -5,8 +5,8 @@ import { CartDrawerContext } from '../../../../contexts/CartDrawerContext'
 import { priceFormatter } from '../../../../utils/formatter'
 import { CartProductCard } from '../CartProductCard'
 import {
-  CardSidebarContent,
-  CartSidebarContainer,
+  CartDrawerContainer,
+  CartDrawerContent,
   CloseButton,
   Footer,
   Header,
@@ -20,8 +20,8 @@ export function CartDrawer() {
     useContext(CartDrawerContext)
 
   return (
-    <CartSidebarContainer $isOpen={isOpen}>
-      <CardSidebarContent>
+    <CartDrawerContainer $isOpen={isOpen}>
+      <CartDrawerContent>
         <Header>
           <Title>
             Carrinho <br />
@@ -38,7 +38,7 @@ export function CartDrawer() {
             return <CartProductCard key={item.id} products={item} />
           })}
         </Product>
-      </CardSidebarContent>
+      </CartDrawerContent>
 
       <Footer>
         <span>Total:</span>
@@ -48,6 +48,6 @@ export function CartDrawer() {
       <PurchaseButton type="button" title="Finalizar Compra">
         Finalizar Compra
       </PurchaseButton>
-    </CartSidebarContainer>
+    </CartDrawerContainer>
   )
 }

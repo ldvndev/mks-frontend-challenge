@@ -112,8 +112,7 @@ export const PriceBadge = styled.div`
 
   padding: 0.5rem 1.125rem;
   border-radius: 5px;
-
-  background-color: ${(props) => props.theme['gray-700']};
+  width: 5rem;
 `
 
 export const Price = styled.span`
@@ -121,5 +120,5 @@ export const Price = styled.span`
   font-weight: 700;
   line-height: 1;
 
-  color: ${(props) => props.theme.white};
+  color: ${(props) => props.theme.black};
 `

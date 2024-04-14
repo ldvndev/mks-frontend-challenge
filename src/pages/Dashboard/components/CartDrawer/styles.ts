@@ -4,7 +4,7 @@ interface CartSidebarProps {
   $isOpen: boolean
 }
 
-export const CartSidebarContainer = styled.aside<CartSidebarProps>`
+export const CartDrawerContainer = styled.aside<CartSidebarProps>`
   position: fixed;
   z-index: 10;
   right: 0;
@@ -27,7 +27,7 @@ export const CartSidebarContainer = styled.aside<CartSidebarProps>`
   `}
 `
 
-export const CardSidebarContent = styled.div`
+export const CartDrawerContent = styled.div`
   padding-top: 1.5rem;
   display: flex;
   flex-direction: column;
