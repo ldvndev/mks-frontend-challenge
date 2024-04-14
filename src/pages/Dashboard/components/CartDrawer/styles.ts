@@ -22,9 +22,12 @@ export const CartDrawerContainer = styled.aside<CartSidebarProps>`
 
   ${(props) => css`
     background-color: ${props.theme.brand};
-
     transform: translateX(${props.$isOpen ? '0' : '100%'});
   `}
+
+  @media(min-width: 640px) {
+    width: 486px;
+  }
 `
 
 export const CartDrawerContent = styled.div`
@@ -32,6 +35,10 @@ export const CartDrawerContent = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+
+  @media (min-width: 640px) {
+    padding-top: 2.25rem;
+  }
 `
 
 export const Header = styled.header`
@@ -39,6 +46,10 @@ export const Header = styled.header`
   align-items: flex-start;
   justify-content: space-between;
   padding-inline: 2rem;
+
+  @media (min-width: 640px) {
+    padding-inline: 3rem;
+  }
 `
 
 export const Title = styled.span`
@@ -61,7 +72,7 @@ export const CloseButton = styled.button`
   transition: filter 0.2s;
 
   &:hover {
-    filter: brightness(0.8);
+    filter: brightness(0.9);
   }
 `
 
@@ -76,6 +87,19 @@ export const Product = styled.div`
   padding: 0.5rem 1.75rem;
   margin-top: 3.4375rem;
   margin-inline: 0.25rem;
+
+  @media (min-width: 640px) {
+    max-height: 59vh;
+    margin-top: 4rem;
+    padding-inline: 2.75rem;
+    gap: 1.75rem;
+  }
+`
+export const NoProductsText = styled.p`
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: ${(props) => props.theme.white};
+  text-align: center;
 `
 
 export const Footer = styled.div`
@@ -84,10 +108,16 @@ export const Footer = styled.div`
   justify-content: space-between;
   padding: 1.5rem 2rem 2.625rem;
 
-  font-size: 1.75rem;
-  font-weight: 700;
+  span {
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
 
   color: ${(props) => props.theme.white};
+
+  @media (min-width: 640px) {
+    padding: 2.25rem 3rem 2.625rem;
+  }
 `
 
 export const PurchaseButton = styled.button`
@@ -106,6 +136,6 @@ export const PurchaseButton = styled.button`
   transition: filter 0.2s;
 
   &:hover {
-    filter: brightness(0.8);
+    filter: brightness(0.9);
   }
 `

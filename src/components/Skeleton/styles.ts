@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 export const ProductCardSkeletonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   border-radius: 8px;
-
   background-color: ${(props) => props.theme.white};
   box-shadow: 0 2px 8px rgb(0 0 0 / 0.1352);
   overflow: hidden;
 
-  display: flex;
-  flex-direction: column;
+  width: 218px;
 `
 
 export const SkeletonImage = styled.div`

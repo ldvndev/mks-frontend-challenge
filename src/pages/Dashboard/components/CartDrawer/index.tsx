@@ -10,6 +10,7 @@ import {
   CloseButton,
   Footer,
   Header,
+  NoProductsText,
   Product,
   PurchaseButton,
   Title,
@@ -34,9 +35,13 @@ export function CartDrawer() {
         </Header>
 
         <Product>
-          {cartItems.map((item) => {
-            return <CartProductCard key={item.id} products={item} />
-          })}
+          {cartItems?.length ? (
+            cartItems.map((item) => (
+              <CartProductCard key={item.id} products={item} />
+            ))
+          ) : (
+            <NoProductsText>Seu carrinho está vazio.</NoProductsText>
+          )}
         </Product>
       </CartDrawerContent>
 

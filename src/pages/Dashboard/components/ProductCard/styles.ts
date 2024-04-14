@@ -39,8 +39,8 @@ export const ProductCardContainer = styled.div`
 
 export const ProductImage = styled.img`
   width: 100%;
-  object-fit: contain;
   height: 138px;
+  object-fit: contain;
 `
 
 export const ProductCardContent = styled.div`
@@ -53,6 +53,7 @@ export const Header = styled.header`
   justify-content: space-between;
   gap: 0.25rem;
 `
+
 export const ProductTitle = styled.h3`
   font-size: 1rem;
   font-weight: 400;

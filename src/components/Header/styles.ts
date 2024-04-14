@@ -9,6 +9,31 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 425px) {
+    padding-block: 0.9rem;
+    padding-inline: 2.1rem 1.9625rem;
+  }
+
+  @media (min-width: 640px) {
+    padding-block: 1.1125rem;
+    padding-inline: 2.95rem 2.4875rem;
+  }
+
+  @media (min-width: 768px) {
+    padding-block: 1.325rem;
+    padding-inline: 3.8rem 3.0125rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding-block: 1.5375rem;
+    padding-inline: 4.65rem 3.5375rem;
+  }
+
+  @media (min-width: 1280px) {
+    padding-block: 1.75rem;
+    padding-inline: 5.5rem 4.0625rem;
+  }
 `
 
 export const LogoContainer = styled.div`
@@ -50,5 +75,19 @@ export const CartButton = styled.button`
     font-weight: 700;
     font-size: 1.125rem;
     color: ${(props) => props.theme.black};
+  }
+
+  @media (min-width: 640px) {
+    font-size: 0.9375rem;
+    gap: 0.875rem;
+    padding-block: 0.625rem;
+    padding-inline: 0.625rem 1.3125rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1.125rem;
+    gap: 1rem;
+    padding-block: 0.75rem;
+    padding-inline: 0.9375rem 1.6875rem;
   }
 `
