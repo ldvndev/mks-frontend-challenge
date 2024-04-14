@@ -1,6 +1,8 @@
-import { X } from 'lucide-react'
+import { Minus, Plus, X } from 'lucide-react'
+import { useContext } from 'react'
 
-import productImage from '../../../../assets/product.svg'
+import { CartDrawerContext } from '../../../../contexts/CartDrawerContext'
+import { priceFormatter } from '../../../../utils/formatter'
 import {
   CartProductCardContainer,
   DeleteProductCartButton,
@@ -14,31 +16,70 @@ import {
   Title,
 } from './styles'
 
-export function CartProductCard() {
+interface CartProductProps {
+  products: {
+    id: number
+    name: string
+    photo: string
+    price: string
+    quantity: number
+  }
+}
+
+export function CartProductCard({ products }: CartProductProps) {
+  const { removeCartItem: handleRemoveCartItem, changeCartItemQuantity } =
+    useContext(CartDrawerContext)
+
+  function handleIncrease() {
+    changeCartItemQuantity(products.id, 'increase')
+  }
+
+  function handleDecrease() {
+    if (products.quantity > 1) {
+      changeCartItemQuantity(products.id, 'decrease')
+    }
+  }
+
   return (
     <CartProductCardContainer>
-      <DeleteProductCartButton type="button" title="Remover do carrinho">
+      <DeleteProductCartButton
+        onClick={() => handleRemoveCartItem(products.id)}
+        type="button"
+        title="Remover do carrinho"
+      >
         <X size={14} color="#ffff" />
       </DeleteProductCartButton>
 
-      <Image src={productImage} alt="" />
-      <Title>Apple Watch Series 4 GPS</Title>
+      <Image src={products.photo} alt={products.name} />
+      <Title>{products.name}</Title>
 
       <QuantityPriceContainer>
         <QuantityContent>
-          <QuantityButton type="button" title="Diminuir quantidade">
-            -
+          <QuantityButton
+            type="button"
+            onClick={handleDecrease}
+            title="Diminuir quantidade"
+          >
+            <Minus size={10} />
           </QuantityButton>
 
-          <QuantityInput />
+          <QuantityInput>{products.quantity}</QuantityInput>
 
-          <QuantityButton type="button" title="Aumentar quantidade">
-            +
+          <QuantityButton
+            onClick={handleIncrease}
+            type="button"
+            title="Aumentar quantidade"
+          >
+            <Plus size={10} />
           </QuantityButton>
         </QuantityContent>
 
         <PriceBadge>
-          <Price>R$399</Price>
+          <Price>
+            {priceFormatter
+              .format(+products.price * products.quantity)
+              .slice(0, -3)}
+          </Price>
         </PriceBadge>
       </QuantityPriceContainer>
     </CartProductCardContainer>

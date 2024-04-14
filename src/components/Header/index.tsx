@@ -5,7 +5,7 @@ import { CartDrawerContext } from '../../contexts/CartDrawerContext'
 import { CartButton, HeaderContainer, LogoContainer } from './styles'
 
 export function Header() {
-  const { open } = useContext(CartDrawerContext)
+  const { open, cartQuantity } = useContext(CartDrawerContext)
 
   return (
     <HeaderContainer>
@@ -15,8 +15,8 @@ export function Header() {
       </LogoContainer>
 
       <CartButton type="button" onClick={open} title="Abrir carrinho">
-        <img src={cartImage} alt="" />
-        <span>0</span>
+        <img src={cartImage} alt="Carrinho de compra" />
+        <span>{cartQuantity}</span>
       </CartButton>
     </HeaderContainer>
   )

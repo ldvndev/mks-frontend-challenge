@@ -3,7 +3,7 @@ import { styled } from 'styled-components'
 export const CartProductCardContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   position: relative;
   padding: 1.3125rem 1rem;
@@ -37,8 +37,8 @@ export const DeleteProductCartButton = styled.button`
 
 export const Image = styled.img`
   object-fit: contain;
-  height: 46px;
   width: 46px;
+  height: 57px;
 `
 
 export const Title = styled.strong`
@@ -90,7 +90,7 @@ export const QuantityButton = styled.button`
   }
 `
 
-export const QuantityInput = styled.input`
+export const QuantityInput = styled.span`
   height: 100%;
   width: 3.125rem;
   padding-inline: 0.25rem;

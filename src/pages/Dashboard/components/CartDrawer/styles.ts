@@ -15,7 +15,7 @@ export const CartSidebarContainer = styled.aside<CartSidebarProps>`
   display: flex;
   flex-direction: column;
 
-  width: min(486px, 100vw);
+  width: min(478px, 100vw);
   box-shadow: -5px 0 6px rgb(0 0 0 / 0.13);
 
   transition: transform 0.3s ease-in-out;

@@ -2,6 +2,7 @@ import { X } from 'lucide-react'
 import { useContext } from 'react'
 
 import { CartDrawerContext } from '../../../../contexts/CartDrawerContext'
+import { priceFormatter } from '../../../../utils/formatter'
 import { CartProductCard } from '../CartProductCard'
 import {
   CardSidebarContent,
@@ -15,7 +16,8 @@ import {
 } from './styles'
 
 export function CartDrawer() {
-  const { isOpen, close } = useContext(CartDrawerContext)
+  const { isOpen, close, cartItems, cartItemsTotal } =
+    useContext(CartDrawerContext)
 
   return (
     <CartSidebarContainer $isOpen={isOpen}>
@@ -32,13 +34,15 @@ export function CartDrawer() {
         </Header>
 
         <Product>
-          <CartProductCard />
+          {cartItems.map((item) => {
+            return <CartProductCard key={item.id} products={item} />
+          })}
         </Product>
       </CardSidebarContent>
 
       <Footer>
         <span>Total:</span>
-        <span>R$798</span>
+        <span>{priceFormatter.format(+cartItemsTotal).slice(0, -3)}</span>
       </Footer>
 
       <PurchaseButton type="button" title="Finalizar Compra">

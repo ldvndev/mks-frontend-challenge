@@ -34,8 +34,9 @@ export const CartButton = styled.button`
   display: flex;
   align-items: center;
   gap: 1rem;
+  width: 85px;
 
-  padding: 0.5rem 0.875rem;
+  padding: 0.818rem 0.9375rem;
   background-color: ${(props) => props.theme.white};
   border-radius: 8px;
 
