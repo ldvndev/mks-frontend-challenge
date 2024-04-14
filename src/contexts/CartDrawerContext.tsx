@@ -4,7 +4,7 @@ import { createContext, ReactNode, useState } from 'react'
 
 import { getProduct, GetProductResponse } from '../api/getProduct'
 
-interface Product {
+export interface Product {
   id: number
   name: string
   brand: string
